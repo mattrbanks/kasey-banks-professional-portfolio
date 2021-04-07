@@ -69,14 +69,10 @@ const ContactForm = () => {
       </Helmet>
 
       <div className="block mx-auto w-3/4 my-6">
-        <div className="text-center">
-          <div>
-            <p className="mr-4 mb-4 text-xl lg:text-2xl">
-              Feel free to reach out. Let's keep in touch.
-            </p>
-          </div>
-        </div>
         <div className="lg:flex lg:justify-center">
+          <div>
+            <img src={contactMeBitmoji} />
+          </div>
           <form
             className="w-full max-w-lg"
             onSubmit={handleSubmit}
@@ -192,9 +188,7 @@ const ContactForm = () => {
               <div className="md:w-2/3"></div>
             </div>
           </form>
-          <div>
-            <img src={contactMeBitmoji} />
-          </div>
+          
         </div>
       </div>
     </React.Fragment>

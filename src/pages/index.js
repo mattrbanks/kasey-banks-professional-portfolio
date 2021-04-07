@@ -40,7 +40,7 @@ const IndexPage = () => {
         <div className="text-left">
           <div className="block lg:flex lg:justify-center lg:items-center mx-10">
             <img
-              className="max-w-sm lg:max-w-md"
+              className="max-w-xsm lg:max-w-md"
               src="https://github.com/mattrbanks/temp-images-repo/blob/main/cutOutkaseyClean.png?raw=true"
             />
             <p className="lg:pr-80 text-xl">

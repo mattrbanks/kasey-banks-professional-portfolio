@@ -122,7 +122,7 @@ const Header = () => {
       {openMenuMobile ? (
         <div
           id="mobile-menu-id"
-          className="animate-opacity bg-gray-900 absolute top-0 left-0 z-10 w-full h-screen overflow-hidden flex justify-center items-center"
+          className="animate-opacity bg-gray-900 absolute top-0 left-0 z-10 w-full h-screen overflow-hidden flex justify-center items-center cursive-font"
         >
           <div className="relative px-2 pt-2 pb-3 space-y-1">
             <Link
@@ -157,7 +157,7 @@ const Header = () => {
       ) : (
         <div
           id="mobile-menu-id"
-          className="animate-opacity-close hidden bg-gray-900 absolute top-0 left-0 z-10 w-full h-screen overflow-hidden flex justify-center items-center"
+          className="animate-opacity-close hidden bg-gray-900 absolute top-0 left-0 z-10 w-full h-screen overflow-hidden flex justify-center items-center cursive-font"
         >
           <div className="relative px-2 pt-2 pb-3 space-y-1">
             <Link
