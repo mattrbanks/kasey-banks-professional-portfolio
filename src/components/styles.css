@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap");
+
+.cursive-font {
+  font-family: "Calligraffitti", cursive;
+}
+
+.main-header-img {
+  display: block;
+  width: 100%;
+}
+
+.animate-opacity {
+  animation: opac 0.8s;
+}
+
+@keyframes opac {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-opacity-close {
+  animation: opacC 0.8s;
+}
+
+@keyframes opacC {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
