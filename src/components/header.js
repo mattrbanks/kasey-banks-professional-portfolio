@@ -4,7 +4,7 @@ import kaseylogo from "../images/kasey-portfolio-logo.svg";
 import kaseymobilemenu from "../images/kaseymobilemenuWhSm.svg";
 import { Link } from "gatsby";
 import "./styles.css";
-import resume from "../../resume/kasey-resume-2021.pdf";
+import resume from "../../resume/kasey-resume-2021-edit.pdf";
 
 const Header = () => {
   const [openMenuMobile, setOpenMenuMobile] = React.useState(false);

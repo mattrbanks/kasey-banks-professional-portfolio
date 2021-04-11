@@ -2,6 +2,9 @@ import * as React from "react";
 import Layout from "../components/layout";
 import playbutton from "../images/playbutton.svg";
 import "../components/styles.css";
+import BarChartOne from "../components/barChartOne";
+import BarChartTwo from "../components/barChartTwo";
+import BarChartThree from "../components/barChartThree";
 
 //import SEO from "../components/seo";
 
@@ -39,9 +42,13 @@ const IndexPage = () => {
 
         <div className="text-left">
           <div className="block lg:flex lg:justify-center lg:items-center mx-10">
-            <img
+            {/* <img
               className="max-w-xsm lg:max-w-md"
               src="https://github.com/mattrbanks/temp-images-repo/blob/main/cutOutkaseyClean.png?raw=true"
+            /> */}
+            <img
+              className="max-w-xsm lg:max-w-md"
+              src="https://github.com/mattrbanks/temp-images-repo/blob/main/whoamibitmoji.png?raw=true"
             />
             <p className="lg:pr-80 text-xl">
               Welcome to my professional portfolio. Let me tell you a bit about
@@ -68,9 +75,14 @@ const IndexPage = () => {
         </div>
 
         <div className="text-center">
-          <p className="text-6xl mt-10">
+          <p className="text-6xl mt-10 mb-10">
             What can I do for you? Here are some numbers.
           </p>
+          <div className="my-10">
+            <BarChartOne />
+            <BarChartTwo />
+            <BarChartThree />
+          </div>
         </div>
       </main>
     </Layout>

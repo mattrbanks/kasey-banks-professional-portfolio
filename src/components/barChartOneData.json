@@ -1,0 +1,28 @@
+[
+  {
+    "categorie": "Reading",
+    "values": [
+      {
+        "value": 44.4,
+        "rate": "Grade-Level Average"
+      },
+      {
+        "value": 57.9,
+        "rate": "My Class Average"
+      }
+    ]
+  },
+  {
+    "categorie": "Math",
+    "values": [
+      {
+        "value": 66.7,
+        "rate": "Grade-Level Average"
+      },
+      {
+        "value": 84.2,
+        "rate": "My Class Average"
+      }
+    ]
+  }
+]
