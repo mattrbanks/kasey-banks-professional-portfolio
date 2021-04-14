@@ -40,6 +40,7 @@
     "react-icons": "^4.2.0",
     "react-recaptcha": "^2.3.10",
     "react-slick": "^0.28.0",
+    "react-visibility-sensor": "^5.1.1",
     "sharp": "^0.27.1",
     "slick-carousel": "^1.8.1"
   },

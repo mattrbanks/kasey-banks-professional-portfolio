@@ -66,10 +66,14 @@ const BarChartOne = () => {
       .attr("class", "bar field1")
       .style("fill", "blue")
       .attr("x", (d) => xScale1("field1"))
-      .attr("y", (d) => yScale(d.field1))
+      //   .attr("y", (d) => yScale(d.field1))
+      .attr("y", (d) => yScale(0))
       .attr("width", xScale1.bandwidth())
+      //   .attr("height", (d) => {
+      //     return height - margin.top - margin.bottom - yScale(d.field1);
+      //   })
       .attr("height", (d) => {
-        return height - margin.top - margin.bottom - yScale(d.field1);
+        return height - margin.top - margin.bottom - yScale(0);
       });
 
     /* Add field2 bars */
@@ -81,10 +85,14 @@ const BarChartOne = () => {
       .attr("class", "bar field2")
       .style("fill", "red")
       .attr("x", (d) => xScale1("field2"))
-      .attr("y", (d) => yScale(d.field2))
+      //   .attr("y", (d) => yScale(d.field2))
+      .attr("y", (d) => yScale(0))
       .attr("width", xScale1.bandwidth())
+      //   .attr("height", (d) => {
+      //     return height - margin.top - margin.bottom - yScale(d.field2);
+      //   })
       .attr("height", (d) => {
-        return height - margin.top - margin.bottom - yScale(d.field2);
+        return height - margin.top - margin.bottom - yScale(0);
       });
 
     // Add the X Axis
@@ -96,6 +104,33 @@ const BarChartOne = () => {
 
     // Add the Y Axis
     svg.append("g").attr("class", "y axis").call(yAxis);
+
+    // Animation
+    svg
+      .selectAll(".bar.field1")
+      .transition()
+      .duration(800)
+      .attr("y", (d) => yScale(d.field1))
+      .attr("height", (d) => {
+        return height - margin.top - margin.bottom - yScale(d.field1);
+      })
+      .delay(function (d, i) {
+        console.log(i);
+        return i * 100;
+      });
+
+    svg
+      .selectAll(".bar.field2")
+      .transition()
+      .duration(800)
+      .attr("y", (d) => yScale(d.field2))
+      .attr("height", (d) => {
+        return height - margin.top - margin.bottom - yScale(d.field2);
+      })
+      .delay(function (d, i) {
+        console.log(i);
+        return i * 100;
+      });
 
     // Legend
     svg
