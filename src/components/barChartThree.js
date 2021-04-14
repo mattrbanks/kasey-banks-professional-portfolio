@@ -32,6 +32,17 @@ const BarChartThree = () => {
 
   const svgRef = useRef();
 
+  const insertLinebreaks = function (d) {
+    var el = d3.select(this);
+    var words = d.split(" ");
+    el.text("");
+
+    for (var i = 0; i < words.length; i++) {
+      var tspan = el.append("tspan").text(words[i]);
+      if (i > 0) tspan.attr("x", 0).attr("dy", "15");
+    }
+  };
+
   useEffect(() => {
     const svg = select(svgRef.current),
       width = 500,
@@ -106,6 +117,37 @@ const BarChartThree = () => {
 
     // Add the Y Axis
     svg.append("g").attr("class", "y axis").call(yAxis);
+
+    // Legend
+    svg
+      .append("circle")
+      .attr("cx", 200)
+      .attr("cy", 30)
+      .attr("r", 6)
+      .style("fill", "orange");
+    svg
+      .append("circle")
+      .attr("cx", 200)
+      .attr("cy", 60)
+      .attr("r", 6)
+      .style("fill", "purple");
+    svg
+      .append("text")
+      .attr("x", 220)
+      .attr("y", 30)
+      .text("Year 1")
+      .style("font-size", "15px")
+      .attr("alignment-baseline", "middle");
+    svg
+      .append("text")
+      .attr("x", 220)
+      .attr("y", 60)
+      .text("Year 2")
+      .style("font-size", "15px")
+      .attr("alignment-baseline", "middle");
+
+    // insert line breaks for x axis
+    svg.selectAll("g.x.axis g text").each(insertLinebreaks);
   }, []);
 
   return (

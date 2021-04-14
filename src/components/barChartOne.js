@@ -96,6 +96,34 @@ const BarChartOne = () => {
 
     // Add the Y Axis
     svg.append("g").attr("class", "y axis").call(yAxis);
+
+    // Legend
+    svg
+      .append("circle")
+      .attr("cx", 200)
+      .attr("cy", 30)
+      .attr("r", 6)
+      .style("fill", "blue");
+    svg
+      .append("circle")
+      .attr("cx", 200)
+      .attr("cy", 60)
+      .attr("r", 6)
+      .style("fill", "red");
+    svg
+      .append("text")
+      .attr("x", 220)
+      .attr("y", 30)
+      .text("Grade-Level Average")
+      .style("font-size", "15px")
+      .attr("alignment-baseline", "middle");
+    svg
+      .append("text")
+      .attr("x", 220)
+      .attr("y", 60)
+      .text("My Class Average")
+      .style("font-size", "15px")
+      .attr("alignment-baseline", "middle");
   }, []);
 
   return (

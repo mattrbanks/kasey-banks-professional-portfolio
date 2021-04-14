@@ -80,7 +80,7 @@ const Header = () => {
               <img className="w-20 mx-3 my-2" alt="mb logo" src={kaseylogo} />
             </Link>
 
-            <div className="text-white mx-5 my-7 md:text-3xl lg:text-4xl w-1/2 cursive-font">
+            <div className="text-white mx-5 my-7 text-2xl md:text-3xl lg:text-4xl w-1/2 cursive-font">
               Kasey Banks Professional Portfolio
             </div>
 
@@ -127,7 +127,7 @@ const Header = () => {
           <div className="relative px-2 pt-2 pb-3 space-y-1">
             <Link
               to="/"
-              className="text-2xl text-white block px-3 py-2 rounded-md text-base font-medium"
+              className="text-2xl text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               Home
             </Link>
@@ -162,7 +162,7 @@ const Header = () => {
           <div className="relative px-2 pt-2 pb-3 space-y-1">
             <Link
               to="/"
-              className="text-2xl text-white block px-3 py-2 rounded-md text-base font-medium"
+              className="text-2xl text-white hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               Home
             </Link>

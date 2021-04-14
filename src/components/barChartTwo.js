@@ -116,6 +116,34 @@ const BarChartTwo = () => {
 
     // Add the Y Axis
     svg.append("g").attr("class", "y axis").call(yAxis);
+
+    // Legend
+    svg
+      .append("circle")
+      .attr("cx", 200)
+      .attr("cy", 30)
+      .attr("r", 6)
+      .style("fill", "black");
+    svg
+      .append("circle")
+      .attr("cx", 200)
+      .attr("cy", 60)
+      .attr("r", 6)
+      .style("fill", "#BE185D");
+    svg
+      .append("text")
+      .attr("x", 220)
+      .attr("y", 30)
+      .text("Fall")
+      .style("font-size", "15px")
+      .attr("alignment-baseline", "middle");
+    svg
+      .append("text")
+      .attr("x", 220)
+      .attr("y", 60)
+      .text("Winter")
+      .style("font-size", "15px")
+      .attr("alignment-baseline", "middle");
   }, []);
 
   return (
