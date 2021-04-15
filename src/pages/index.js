@@ -9,6 +9,8 @@ import BarChartThree from "../components/barChartThree";
 //import SEO from "../components/seo";
 
 const IndexPage = () => {
+  const [videoPlay, setVideoPlay] = React.useState(false);
+
   return (
     <Layout>
       <main className="overflow-hidden">
@@ -21,20 +23,58 @@ const IndexPage = () => {
             src={playbutton}
           />
         </div> */}
-        <div className="main-header-img relative">
-          <img
-            src="https://raw.githubusercontent.com/mattrbanks/temp-images-repo/5848e09072dbae54a9583ecbecb9d4f721fbbfb2/kaseyheaderfigmaps.svg"
-            className="main-header-img"
-          />
-          <div className="w-full flex justify-center">
-            <img
-              style={{ top: "45%" }}
-              className="w-32 mx-3 my-2 cursor-pointer absolute"
-              alt="mb logo"
-              src={playbutton}
-            />
+        {videoPlay ? (
+          <div className="main-header-img relative">
+            <div style={{ paddingTop: "56.25%" }}>
+              <iframe
+                src="https://www.youtube.com/embed/rL6BbeNNeRI?autoplay=1&muted=1"
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  width: "100%",
+                  height: "100%",
+                }}
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                frameBorder="0"
+                webkitallowfullscreen="true"
+                mozallowfullscreen="true"
+                allowFullScreen
+              ></iframe>
+            </div>
+            {/* <img
+              src="https://raw.githubusercontent.com/mattrbanks/temp-images-repo/5848e09072dbae54a9583ecbecb9d4f721fbbfb2/kaseyheaderfigmaps.svg"
+              className="main-header-img"
+            /> */}
+            {/* <div className="w-full flex justify-center">
+              <img
+                // onClick={}
+                style={{ top: "45%" }}
+                className="w-32 mx-3 my-2 cursor-pointer absolute"
+                alt="mb logo"
+                src={playbutton}
+              />
+            </div> */}
           </div>
-        </div>
+        ) : (
+          <div className="main-header-img relative">
+            <img
+              src="https://raw.githubusercontent.com/mattrbanks/temp-images-repo/5848e09072dbae54a9583ecbecb9d4f721fbbfb2/kaseyheaderfigmaps.svg"
+              className="main-header-img"
+            />
+            <div className="w-full flex justify-center">
+              <img
+                onClick={() => {
+                  setVideoPlay(true);
+                }}
+                style={{ top: "45%" }}
+                className="w-32 mx-3 my-2 cursor-pointer absolute"
+                alt="mb logo"
+                src={playbutton}
+              />
+            </div>
+          </div>
+        )}
 
         <div className="text-center">
           <p className="text-6xl mt-10">Who am I?</p>
