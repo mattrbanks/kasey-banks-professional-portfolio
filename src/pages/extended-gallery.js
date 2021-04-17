@@ -1,43 +1,33 @@
 import React from "react";
 import Layout from "../components/layout";
+import "../components/styles.css";
 
 const ExtendedGallery = () => {
   return (
     <Layout>
       <div>
-        <div className="container mx-auto p-8">
-          <div className="flex flex-row flex-wrap -mx-2">
-            <div className="w-full md:w-1/2 h-64 md:h-auto mb-4 px-2">
-              <a
-                className="block w-full h-full bg-grey-dark bg-no-repeat bg-center bg-cover"
-                href="#"
-                title="Link"
-                style={{
-                  backgroundImage:
-                    "url('https://github.com/mattrbanks/temp-images-repo/blob/main/image%20(1).png?raw=true')",
-                }}
-              >
-                Link
-              </a>
-            </div>
-            <div className="w-full md:w-1/2 mb-4 px-2">
-              <div className="flex flex-col sm:flex-row md:flex-col -mx-2">
-                <div className="w-full sm:w-1/2 md:w-full h-48 xl:h-64 mb-4 sm:mb-0 md:mb-4 px-2">
-                  <a
-                    className="block w-full h-full bg-grey-dark bg-no-repeat bg-center bg-cover"
-                    href="#"
-                    title="Link"
-                    style={{
-                      backgroundImage:
-                        "url('https://github.com/mattrbanks/temp-images-repo/blob/main/image%20(2).png?raw=true')",
-                    }}
-                  >
-                    Link
-                  </a>
-                </div>
-              </div>
-            </div>
+        <div className="lg:flex lg:justify-center">
+          <div className="flex justify-center items-center">
+            <p className="text-9xl cursive-font mr-10">My Videos</p>
           </div>
+
+          <div>
+            <img
+              className="ml-10"
+              src="https://github.com/mattrbanks/temp-images-repo/blob/main/watchMoviesBitmoji.png?raw=true"
+            ></img>
+          </div>
+        </div>
+
+        <div className="flex justify-center">
+          <p className="text-xl w-1/2 font-bold">
+            Welcome to my video page. The videos below highlight the span of my
+            various roles over the course of my career, including my experience
+            teaching students remotely; my experience facilitating data team
+            meetings with teachers; my experience coaching teachers; and my
+            experience setting routines with elementary students to create an
+            environment for purposeful discussion.
+          </p>
         </div>
 
         <div className="block mx-auto md:w-8/12 lg:flex lg:justify-evenly lg:w-full">
@@ -159,6 +149,12 @@ const ExtendedGallery = () => {
               finally to the whole group.
             </p>
           </div>
+        </div>
+
+        <div className="flex justify-center mb-20">
+          <p className="text-xl font-bold">
+            Thank you for taking the time to watch my videos.
+          </p>
         </div>
       </div>
     </Layout>
