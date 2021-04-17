@@ -1,6 +1,7 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { select } from "d3";
 import * as d3 from "d3";
+import VisibilitySensor from "react-visibility-sensor";
 
 const BarChartOne = () => {
   let models = [
@@ -21,6 +22,8 @@ const BarChartOne = () => {
   });
 
   const svgRef = useRef();
+
+  const [visibility, setVisibility] = useState(false);
 
   useEffect(() => {
     const svg = select(svgRef.current),
@@ -105,33 +108,6 @@ const BarChartOne = () => {
     // Add the Y Axis
     svg.append("g").attr("class", "y axis").call(yAxis);
 
-    // Animation
-    svg
-      .selectAll(".bar.field1")
-      .transition()
-      .duration(800)
-      .attr("y", (d) => yScale(d.field1))
-      .attr("height", (d) => {
-        return height - margin.top - margin.bottom - yScale(d.field1);
-      })
-      .delay(function (d, i) {
-        console.log(i);
-        return i * 100;
-      });
-
-    svg
-      .selectAll(".bar.field2")
-      .transition()
-      .duration(800)
-      .attr("y", (d) => yScale(d.field2))
-      .attr("height", (d) => {
-        return height - margin.top - margin.bottom - yScale(d.field2);
-      })
-      .delay(function (d, i) {
-        console.log(i);
-        return i * 100;
-      });
-
     // Legend
     svg
       .append("circle")
@@ -161,14 +137,65 @@ const BarChartOne = () => {
       .attr("alignment-baseline", "middle");
   }, []);
 
+  useEffect(() => {
+    const svg = select(svgRef.current),
+      width = 500,
+      height = 300,
+      margin = { top: 30, right: 20, bottom: 30, left: 50 },
+      barPadding = 0.2,
+      axisTicks = { qty: 5, outerSize: 0, dateFormat: "%m-%d" };
+
+    const yScale = d3
+      .scaleLinear()
+      .range([height - margin.top - margin.bottom, 0]);
+
+    yScale.domain([0, 100]);
+
+    // Animation
+    if (visibility === true) {
+      svg
+        .selectAll(".bar.field1")
+        .transition()
+        .duration(800)
+        .attr("y", (d) => yScale(d.field1))
+        .attr("height", (d) => {
+          return height - margin.top - margin.bottom - yScale(d.field1);
+        })
+        .delay(function (d, i) {
+          console.log(i);
+          return i * 100;
+        });
+
+      svg
+        .selectAll(".bar.field2")
+        .transition()
+        .duration(800)
+        .attr("y", (d) => yScale(d.field2))
+        .attr("height", (d) => {
+          return height - margin.top - margin.bottom - yScale(d.field2);
+        })
+        .delay(function (d, i) {
+          console.log(i);
+          return i * 100;
+        });
+    }
+  }, [visibility]);
+
   return (
     <React.Fragment>
       <div className="flex justify-center items-center w-full h-80">
-        <svg
-          style={{ width: 500 }}
-          className="my-20 block overflow-visible bg-white w-auto h-80"
-          ref={svgRef}
-        ></svg>
+        <VisibilitySensor
+          onChange={(isVisible) => {
+            setVisibility(isVisible);
+            console.log(visibility);
+          }}
+        >
+          <svg
+            style={{ width: 500 }}
+            className="my-20 block overflow-visible bg-white w-auto h-80"
+            ref={svgRef}
+          ></svg>
+        </VisibilitySensor>
       </div>
     </React.Fragment>
   );
