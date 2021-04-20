@@ -6,7 +6,7 @@ const ExtendedGallery = () => {
   return (
     <Layout>
       <div>
-        <div className="lg:flex lg:justify-center">
+        <div className="lg:flex lg:justify-center mt-10">
           <div className="flex justify-center items-center">
             <p className="text-9xl cursive-font mr-10">My Videos</p>
           </div>

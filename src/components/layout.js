@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
       <div>
         <main>{children}</main>
       </div>
-      <div className="w-full h-64 px-4 py-4">
+      <div className="w-full px-4 py-4">
         <Footer />
       </div>
     </>

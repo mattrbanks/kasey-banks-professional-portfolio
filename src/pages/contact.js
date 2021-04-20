@@ -5,7 +5,7 @@ import ContactForm from "../components/contact-form";
 const Contact = () => {
   return (
     <Layout>
-      <div className="w-full my-4">
+      <div className="w-full mt-10 mb-28">
         <ContactForm />
       </div>
     </Layout>

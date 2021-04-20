@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { select } from "d3";
+import { select, color } from "d3";
 import * as d3 from "d3";
 import VisibilitySensor from "react-visibility-sensor";
 
@@ -68,14 +68,30 @@ const BarChartOne = () => {
       .append("rect")
       .attr("class", "bar field1")
       .style("fill", "blue")
-      .attr("x", (d) => xScale1("field1"))
-      //   .attr("y", (d) => yScale(d.field1))
-      .attr("y", (d) => yScale(0))
+      .on("mouseover", function (d, i) {
+        d3.select(this).style("fill", d3.rgb(color("blue")).darker(2));
+
+        let y = d3.select(this).attr("y");
+        let x = d3.select(this).attr("x");
+
+        svg
+          .append("text")
+          .attr("id", "ID")
+          .attr("x", x + 5)
+          .attr("y", y)
+          .text(i.field1)
+          .style("font-size", "10px")
+          .attr("alignment-baseline", "middle");
+      })
+      .on("mouseout", function (d, i) {
+        d3.select(this).style("fill", color("blue"));
+
+        d3.select("#ID").remove();
+      })
+      .attr("x", () => xScale1("field1"))
+      .attr("y", () => yScale(0))
       .attr("width", xScale1.bandwidth())
-      //   .attr("height", (d) => {
-      //     return height - margin.top - margin.bottom - yScale(d.field1);
-      //   })
-      .attr("height", (d) => {
+      .attr("height", () => {
         return height - margin.top - margin.bottom - yScale(0);
       });
 
@@ -87,14 +103,50 @@ const BarChartOne = () => {
       .append("rect")
       .attr("class", "bar field2")
       .style("fill", "red")
-      .attr("x", (d) => xScale1("field2"))
-      //   .attr("y", (d) => yScale(d.field2))
-      .attr("y", (d) => yScale(0))
+      .on("mouseover", function (d, i) {
+        d3.select(this).style("fill", d3.rgb(color("red")).darker(2));
+
+        let y = d3.select(this).attr("y");
+        let x = d3.select(this).attr("x");
+
+        svg
+          .append("text")
+          .attr("id", "ID")
+          .attr("x", 5)
+          .attr("y", y)
+          .text(i.field2)
+          .style("font-size", "10px")
+          .attr("alignment-baseline", "middle");
+      })
+      .on("touchstart", function (d, i) {
+        d3.select(this).style("fill", d3.rgb(color("red")).darker(2));
+
+        let y = d3.select(this).attr("y");
+        let x = d3.select(this).attr("x");
+
+        svg
+          .append("text")
+          .attr("id", "ID")
+          .attr("x", 5)
+          .attr("y", y)
+          .text(i.field2)
+          .style("font-size", "10px")
+          .attr("alignment-baseline", "middle");
+      })
+      .on("mouseout", function () {
+        d3.select(this).style("fill", color("red"));
+
+        d3.select("#ID").remove();
+      })
+      .on("touchend", function () {
+        d3.select(this).style("fill", color("red"));
+
+        d3.select("#ID").remove();
+      })
+      .attr("x", () => xScale1("field2"))
+      .attr("y", () => yScale(0))
       .attr("width", xScale1.bandwidth())
-      //   .attr("height", (d) => {
-      //     return height - margin.top - margin.bottom - yScale(d.field2);
-      //   })
-      .attr("height", (d) => {
+      .attr("height", () => {
         return height - margin.top - margin.bottom - yScale(0);
       });
 
@@ -111,27 +163,27 @@ const BarChartOne = () => {
     // Legend
     svg
       .append("circle")
-      .attr("cx", 200)
-      .attr("cy", 30)
+      .attr("cx", 50)
+      .attr("cy", 270)
       .attr("r", 6)
       .style("fill", "blue");
     svg
       .append("circle")
-      .attr("cx", 200)
-      .attr("cy", 60)
+      .attr("cx", 245)
+      .attr("cy", 270)
       .attr("r", 6)
       .style("fill", "red");
     svg
       .append("text")
-      .attr("x", 220)
-      .attr("y", 30)
+      .attr("x", 70)
+      .attr("y", 270)
       .text("Grade-Level Average")
       .style("font-size", "15px")
       .attr("alignment-baseline", "middle");
     svg
       .append("text")
-      .attr("x", 220)
-      .attr("y", 60)
+      .attr("x", 265)
+      .attr("y", 270)
       .text("My Class Average")
       .style("font-size", "15px")
       .attr("alignment-baseline", "middle");

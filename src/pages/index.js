@@ -15,14 +15,6 @@ const IndexPage = () => {
     <Layout>
       <main className="overflow-hidden">
         <title>BHI Home</title>
-        {/* <div className="h-screen bg-main-img bg-center bg-cover relative flex justify-center items-center"> */}
-        {/* <div className="h-screen bg-main-img bg-center bg-cover relative flex justify-center items-center">
-          <img
-            className="w-32 mx-3 my-2 cursor-pointer"
-            alt="mb logo"
-            src={playbutton}
-          />
-        </div> */}
         {videoPlay ? (
           <div className="main-header-img relative">
             <div style={{ paddingTop: "56.25%" }}>
@@ -42,19 +34,14 @@ const IndexPage = () => {
                 allowFullScreen
               ></iframe>
             </div>
-            {/* <img
-              src="https://raw.githubusercontent.com/mattrbanks/temp-images-repo/5848e09072dbae54a9583ecbecb9d4f721fbbfb2/kaseyheaderfigmaps.svg"
-              className="main-header-img"
-            /> */}
-            {/* <div className="w-full flex justify-center">
-              <img
-                // onClick={}
-                style={{ top: "45%" }}
-                className="w-32 mx-3 my-2 cursor-pointer absolute"
-                alt="mb logo"
-                src={playbutton}
-              />
-            </div> */}
+            <div
+              onClick={() => {
+                setVideoPlay(false);
+              }}
+              className="text-white text-sm bg-gray-900 absolute right-0 cursor-pointer py-1.5 px-2.5 rounded-full border"
+            >
+              Switch back to header image
+            </div>
           </div>
         ) : (
           <div className="main-header-img relative">
@@ -82,10 +69,6 @@ const IndexPage = () => {
 
         <div className="text-left">
           <div className="block lg:flex lg:justify-center lg:items-center mx-10">
-            {/* <img
-              className="max-w-xsm lg:max-w-md"
-              src="https://github.com/mattrbanks/temp-images-repo/blob/main/cutOutkaseyClean.png?raw=true"
-            /> */}
             <img
               className="max-w-xsm lg:max-w-md"
               src="https://github.com/mattrbanks/temp-images-repo/blob/main/whoamibitmoji.png?raw=true"
