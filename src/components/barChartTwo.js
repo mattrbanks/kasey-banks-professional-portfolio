@@ -142,9 +142,9 @@ const BarChartTwo = () => {
       .enter()
       .append("rect")
       .attr("class", "bar field2")
-      .style("fill", "#BE185D")
+      .style("fill", "green")
       .on("mouseover", function (d, i) {
-        d3.select(this).style("fill", d3.rgb(color("#BE185D")).darker(2));
+        d3.select(this).style("fill", d3.rgb(color("green")).darker(2));
 
         let y = d3.select(this).attr("y");
         let x = d3.select(this).attr("x");
@@ -159,7 +159,7 @@ const BarChartTwo = () => {
           .attr("alignment-baseline", "middle");
       })
       .on("touchstart", function (d, i) {
-        d3.select(this).style("fill", d3.rgb(color("#BE185D")).darker(2));
+        d3.select(this).style("fill", d3.rgb(color("green")).darker(2));
 
         let y = d3.select(this).attr("y");
         let x = d3.select(this).attr("x");
@@ -174,12 +174,12 @@ const BarChartTwo = () => {
           .attr("alignment-baseline", "middle");
       })
       .on("mouseout", function () {
-        d3.select(this).style("fill", color("#BE185D"));
+        d3.select(this).style("fill", color("green"));
 
         d3.select("#ID").remove();
       })
       .on("touchend", function () {
-        d3.select(this).style("fill", color("#BE185D"));
+        d3.select(this).style("fill", color("green"));
 
         d3.select("#ID").remove();
       })
@@ -212,7 +212,7 @@ const BarChartTwo = () => {
       .attr("cx", 145)
       .attr("cy", 270)
       .attr("r", 6)
-      .style("fill", "#BE185D");
+      .style("fill", "green");
     svg
       .append("text")
       .attr("x", 70)
