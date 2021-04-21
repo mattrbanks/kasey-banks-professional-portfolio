@@ -255,6 +255,9 @@ const BarChartOne = () => {
 
   return (
     <React.Fragment>
+      <div className="text-center underline font-bold">
+        <h3>My Classroom Data: CT State Test for 3 rd Grade Students</h3>
+      </div>
       <div className="block mx-auto sm:w-8/12 xl:flex xl:justify-center xl:items-center w-full">
         <VisibilitySensor
           onChange={(isVisible) => {
@@ -264,16 +267,18 @@ const BarChartOne = () => {
         >
           <svg
             style={{ width: 500 }}
-            className="xl:my-20 block overflow-visible bg-white w-auto h-80 m-auto"
+            className="xl:my-10 block overflow-visible bg-white w-auto h-80 m-auto"
             ref={svgRef}
           ></svg>
         </VisibilitySensor>
         <div className="max-w-md text-left m-auto">
           <figcaption className="my-10">
-            Fig.1 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Soluta minus ad maxime cum, blanditiis minima? Minima placeat
-            quisquam cum, quae reiciendis dolore voluptate eius aliquid. Illo
-            sunt asperiores officiis quia?
+            Fig.1 - This graph represents data from my time as a third-grade
+            teacher. It shows my class average, on the state accountability
+            test, versus the third-grade average in my school for reading and
+            math. In reading, the grade level average was 44.4% and my class
+            average was 57.9%. In math, the grade level average was 66.7% and my
+            class average was 84.2%.
           </figcaption>
         </div>
       </div>

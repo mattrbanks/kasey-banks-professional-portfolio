@@ -279,6 +279,11 @@ const BarChartThree = () => {
 
   return (
     <React.Fragment>
+      <div className="text-center underline font-bold">
+        <h3>
+          Mathematics Instructional Coach Data: Instructional Walkthrough Data
+        </h3>
+      </div>
       <div className="block mx-auto sm:w-8/12 xl:flex xl:justify-center xl:items-center w-full">
         <VisibilitySensor
           onChange={(isVisible) => {
@@ -288,16 +293,19 @@ const BarChartThree = () => {
         >
           <svg
             style={{ width: 500 }}
-            className="xl:my-20 block overflow-visible bg-white w-auto h-80 m-auto"
+            className="xl:my-10 block overflow-visible bg-white w-auto h-80 m-auto"
             ref={svgRef}
           ></svg>
         </VisibilitySensor>
         <div className="max-w-md text-left m-auto">
           <figcaption className="my-10">
-            Fig.3 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Soluta minus ad maxime cum, blanditiis minima? Minima placeat
-            quisquam cum, quae reiciendis dolore voluptate eius aliquid. Illo
-            sunt asperiores officiis quia?
+            Fig.3 - This graph represents data from my time as a district
+            instructional coach. During this time, I facilitated instructional
+            walkthroughs and collected data around instructional goals for the
+            school. The instructional goals were focus, coherence,
+            representations and productive struggle in mathematics. This data
+            set shows year one data versus year two, after I had a year to work
+            with teacher to provide professional learning and coaching.
           </figcaption>
         </div>
       </div>

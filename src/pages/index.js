@@ -97,10 +97,12 @@ const IndexPage = () => {
           </div>
         </div>
 
-        <div className="text-center">
-          <p className="text-6xl mt-10 mb-10">
-            What can I do for you? Here are some numbers.
-          </p>
+        <div>
+          <div className="text-center">
+            <p className="text-6xl mt-10 mb-10">
+              What can I do for you? Here are some numbers.
+            </p>
+          </div>
           <div className="my-10">
             <BarChartOne />
             <BarChartTwo />

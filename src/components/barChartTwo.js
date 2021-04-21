@@ -275,6 +275,9 @@ const BarChartTwo = () => {
 
   return (
     <React.Fragment>
+      <div className="text-center underline font-bold">
+        <h3>Intervention Data: MAP Math Fall vs Winter Comparison</h3>
+      </div>
       <div className="block mx-auto sm:w-8/12 xl:flex xl:justify-center xl:items-center w-full">
         <VisibilitySensor
           onChange={(isVisible) => {
@@ -284,16 +287,17 @@ const BarChartTwo = () => {
         >
           <svg
             style={{ width: 500 }}
-            className="xl:my-20 block overflow-visible bg-white w-auto h-80 m-auto"
+            className="xl:my-10 block overflow-visible bg-white w-auto h-80 m-auto"
             ref={svgRef}
           ></svg>
         </VisibilitySensor>
         <div className="max-w-md text-left m-auto">
           <figcaption className="my-10">
-            Fig.2 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Soluta minus ad maxime cum, blanditiis minima? Minima placeat
-            quisquam cum, quae reiciendis dolore voluptate eius aliquid. Illo
-            sunt asperiores officiis quia?
+            Fig.2 - This graph represents data from my time working with
+            students in intervention groups. At the time, I was working with six
+            students. The goal was to increase each student’s Fall MAP math
+            score by at least seven points by winter. All students met the goal
+            and the class average of points increased was eleven.
           </figcaption>
         </div>
       </div>
