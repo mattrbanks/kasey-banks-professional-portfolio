@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { select } from "d3";
+import { select, color } from "d3";
 import * as d3 from "d3";
 import VisibilitySensor from "react-visibility-sensor";
 
@@ -50,7 +50,7 @@ const BarChartTwo = () => {
       width = 500,
       height = 300,
       margin = { top: 30, right: 20, bottom: 30, left: 50 },
-      barPadding = 0.2,
+      barPadding = 0.4,
       axisTicks = { qty: 5, outerSize: 0, dateFormat: "%m-%d" };
 
     const xScale0 = d3
@@ -88,6 +88,46 @@ const BarChartTwo = () => {
       .append("rect")
       .attr("class", "bar field1")
       .style("fill", "black")
+      .on("mouseover", function (d, i) {
+        d3.select(this).style("fill", d3.hcl(color("black")).brighter(2));
+
+        let y = d3.select(this).attr("y");
+        let x = d3.select(this).attr("x");
+
+        svg
+          .append("text")
+          .attr("id", "ID")
+          .attr("x", x + 5)
+          .attr("y", y)
+          .text(i.field1)
+          .style("font-size", "10px")
+          .attr("alignment-baseline", "middle");
+      })
+      .on("touchstart", function (d, i) {
+        d3.select(this).style("fill", d3.hcl(color("black")).brighter(2));
+
+        let y = d3.select(this).attr("y");
+        let x = d3.select(this).attr("x");
+
+        svg
+          .append("text")
+          .attr("id", "ID")
+          .attr("x", 5)
+          .attr("y", y)
+          .text(i.field1)
+          .style("font-size", "10px")
+          .attr("alignment-baseline", "middle");
+      })
+      .on("mouseout", function (d, i) {
+        d3.select(this).style("fill", color("black"));
+
+        d3.select("#ID").remove();
+      })
+      .on("touchend", function () {
+        d3.select(this).style("fill", color("black"));
+
+        d3.select("#ID").remove();
+      })
       .attr("x", (d) => xScale1("field1"))
       .attr("y", (d) => yScale(160))
       .attr("width", xScale1.bandwidth())
@@ -103,6 +143,46 @@ const BarChartTwo = () => {
       .append("rect")
       .attr("class", "bar field2")
       .style("fill", "#BE185D")
+      .on("mouseover", function (d, i) {
+        d3.select(this).style("fill", d3.rgb(color("#BE185D")).darker(2));
+
+        let y = d3.select(this).attr("y");
+        let x = d3.select(this).attr("x");
+
+        svg
+          .append("text")
+          .attr("id", "ID")
+          .attr("x", 5)
+          .attr("y", y)
+          .text(i.field2)
+          .style("font-size", "10px")
+          .attr("alignment-baseline", "middle");
+      })
+      .on("touchstart", function (d, i) {
+        d3.select(this).style("fill", d3.rgb(color("#BE185D")).darker(2));
+
+        let y = d3.select(this).attr("y");
+        let x = d3.select(this).attr("x");
+
+        svg
+          .append("text")
+          .attr("id", "ID")
+          .attr("x", 5)
+          .attr("y", y)
+          .text(i.field2)
+          .style("font-size", "10px")
+          .attr("alignment-baseline", "middle");
+      })
+      .on("mouseout", function () {
+        d3.select(this).style("fill", color("#BE185D"));
+
+        d3.select("#ID").remove();
+      })
+      .on("touchend", function () {
+        d3.select(this).style("fill", color("#BE185D"));
+
+        d3.select("#ID").remove();
+      })
       .attr("x", (d) => xScale1("field2"))
       .attr("y", (d) => yScale(160))
       .attr("width", xScale1.bandwidth())
@@ -123,27 +203,27 @@ const BarChartTwo = () => {
     // Legend
     svg
       .append("circle")
-      .attr("cx", 200)
-      .attr("cy", 30)
+      .attr("cx", 50)
+      .attr("cy", 270)
       .attr("r", 6)
       .style("fill", "black");
     svg
       .append("circle")
-      .attr("cx", 200)
-      .attr("cy", 60)
+      .attr("cx", 145)
+      .attr("cy", 270)
       .attr("r", 6)
       .style("fill", "#BE185D");
     svg
       .append("text")
-      .attr("x", 220)
-      .attr("y", 30)
+      .attr("x", 70)
+      .attr("y", 270)
       .text("Fall")
       .style("font-size", "15px")
       .attr("alignment-baseline", "middle");
     svg
       .append("text")
-      .attr("x", 220)
-      .attr("y", 60)
+      .attr("x", 165)
+      .attr("y", 270)
       .text("Winter")
       .style("font-size", "15px")
       .attr("alignment-baseline", "middle");
@@ -195,7 +275,7 @@ const BarChartTwo = () => {
 
   return (
     <React.Fragment>
-      <div className="flex justify-center items-center w-full h-80">
+      <div className="block mx-auto sm:w-8/12 xl:flex xl:justify-center xl:items-center w-full">
         <VisibilitySensor
           onChange={(isVisible) => {
             setVisibility(isVisible);
@@ -204,10 +284,18 @@ const BarChartTwo = () => {
         >
           <svg
             style={{ width: 500 }}
-            className="my-20 block overflow-visible bg-white w-auto h-80"
+            className="xl:my-20 block overflow-visible bg-white w-auto h-80 m-auto"
             ref={svgRef}
           ></svg>
         </VisibilitySensor>
+        <div className="max-w-md text-left m-auto">
+          <figcaption className="my-10">
+            Fig.2 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Soluta minus ad maxime cum, blanditiis minima? Minima placeat
+            quisquam cum, quae reiciendis dolore voluptate eius aliquid. Illo
+            sunt asperiores officiis quia?
+          </figcaption>
+        </div>
       </div>
     </React.Fragment>
   );

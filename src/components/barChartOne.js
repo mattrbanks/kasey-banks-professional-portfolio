@@ -83,7 +83,27 @@ const BarChartOne = () => {
           .style("font-size", "10px")
           .attr("alignment-baseline", "middle");
       })
+      .on("touchstart", function (d, i) {
+        d3.select(this).style("fill", d3.rgb(color("blue")).darker(2));
+
+        let y = d3.select(this).attr("y");
+        let x = d3.select(this).attr("x");
+
+        svg
+          .append("text")
+          .attr("id", "ID")
+          .attr("x", 5)
+          .attr("y", y)
+          .text(i.field1)
+          .style("font-size", "10px")
+          .attr("alignment-baseline", "middle");
+      })
       .on("mouseout", function (d, i) {
+        d3.select(this).style("fill", color("blue"));
+
+        d3.select("#ID").remove();
+      })
+      .on("touchend", function () {
         d3.select(this).style("fill", color("blue"));
 
         d3.select("#ID").remove();
@@ -235,7 +255,7 @@ const BarChartOne = () => {
 
   return (
     <React.Fragment>
-      <div className="flex justify-center items-center w-full h-80">
+      <div className="block mx-auto sm:w-8/12 xl:flex xl:justify-center xl:items-center w-full">
         <VisibilitySensor
           onChange={(isVisible) => {
             setVisibility(isVisible);
@@ -244,10 +264,18 @@ const BarChartOne = () => {
         >
           <svg
             style={{ width: 500 }}
-            className="my-20 block overflow-visible bg-white w-auto h-80"
+            className="xl:my-20 block overflow-visible bg-white w-auto h-80 m-auto"
             ref={svgRef}
           ></svg>
         </VisibilitySensor>
+        <div className="max-w-md text-left m-auto">
+          <figcaption className="my-10">
+            Fig.1 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Soluta minus ad maxime cum, blanditiis minima? Minima placeat
+            quisquam cum, quae reiciendis dolore voluptate eius aliquid. Illo
+            sunt asperiores officiis quia?
+          </figcaption>
+        </div>
       </div>
     </React.Fragment>
   );

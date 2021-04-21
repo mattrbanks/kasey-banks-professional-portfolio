@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import Recaptcha from "react-recaptcha";
-import contactMeBitmoji from "../images/image (7).png";
+import contactMeBitmoji from "../images/contactmebitmoji.png";
 
 function encode(data) {
   const formData = new FormData();
@@ -188,7 +188,6 @@ const ContactForm = () => {
               <div className="md:w-2/3"></div>
             </div>
           </form>
-          
         </div>
       </div>
     </React.Fragment>

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { select } from "d3";
+import { select, color } from "d3";
 import * as d3 from "d3";
 import VisibilitySensor from "react-visibility-sensor";
 
@@ -89,6 +89,46 @@ const BarChartThree = () => {
       .append("rect")
       .attr("class", "bar field1")
       .style("fill", "orange")
+      .on("mouseover", function (d, i) {
+        d3.select(this).style("fill", d3.rgb(color("orange")).darker(2));
+
+        let y = d3.select(this).attr("y");
+        let x = d3.select(this).attr("x");
+
+        svg
+          .append("text")
+          .attr("id", "ID")
+          .attr("x", x + 5)
+          .attr("y", y)
+          .text(i.field1)
+          .style("font-size", "10px")
+          .attr("alignment-baseline", "middle");
+      })
+      .on("touchstart", function (d, i) {
+        d3.select(this).style("fill", d3.rgb(color("orange")).darker(2));
+
+        let y = d3.select(this).attr("y");
+        let x = d3.select(this).attr("x");
+
+        svg
+          .append("text")
+          .attr("id", "ID")
+          .attr("x", 5)
+          .attr("y", y)
+          .text(i.field1)
+          .style("font-size", "10px")
+          .attr("alignment-baseline", "middle");
+      })
+      .on("mouseout", function (d, i) {
+        d3.select(this).style("fill", color("orange"));
+
+        d3.select("#ID").remove();
+      })
+      .on("touchend", function () {
+        d3.select(this).style("fill", color("orange"));
+
+        d3.select("#ID").remove();
+      })
       .attr("x", (d) => xScale1("field1"))
       .attr("y", (d) => yScale(0))
       .attr("width", xScale1.bandwidth())
@@ -104,6 +144,46 @@ const BarChartThree = () => {
       .append("rect")
       .attr("class", "bar field2")
       .style("fill", "purple")
+      .on("mouseover", function (d, i) {
+        d3.select(this).style("fill", d3.rgb(color("purple")).darker(2));
+
+        let y = d3.select(this).attr("y");
+        let x = d3.select(this).attr("x");
+
+        svg
+          .append("text")
+          .attr("id", "ID")
+          .attr("x", 5)
+          .attr("y", y)
+          .text(i.field2)
+          .style("font-size", "10px")
+          .attr("alignment-baseline", "middle");
+      })
+      .on("touchstart", function (d, i) {
+        d3.select(this).style("fill", d3.rgb(color("purple")).darker(2));
+
+        let y = d3.select(this).attr("y");
+        let x = d3.select(this).attr("x");
+
+        svg
+          .append("text")
+          .attr("id", "ID")
+          .attr("x", 5)
+          .attr("y", y)
+          .text(i.field2)
+          .style("font-size", "10px")
+          .attr("alignment-baseline", "middle");
+      })
+      .on("mouseout", function () {
+        d3.select(this).style("fill", color("purple"));
+
+        d3.select("#ID").remove();
+      })
+      .on("touchend", function () {
+        d3.select(this).style("fill", color("purple"));
+
+        d3.select("#ID").remove();
+      })
       .attr("x", (d) => xScale1("field2"))
       .attr("y", (d) => yScale(0))
       .attr("width", xScale1.bandwidth())
@@ -124,27 +204,27 @@ const BarChartThree = () => {
     // Legend
     svg
       .append("circle")
-      .attr("cx", 200)
-      .attr("cy", 30)
+      .attr("cx", 50)
+      .attr("cy", 270)
       .attr("r", 6)
       .style("fill", "orange");
     svg
       .append("circle")
-      .attr("cx", 200)
-      .attr("cy", 60)
+      .attr("cx", 145)
+      .attr("cy", 270)
       .attr("r", 6)
       .style("fill", "purple");
     svg
       .append("text")
-      .attr("x", 220)
-      .attr("y", 30)
+      .attr("x", 70)
+      .attr("y", 270)
       .text("Year 1")
       .style("font-size", "15px")
       .attr("alignment-baseline", "middle");
     svg
       .append("text")
-      .attr("x", 220)
-      .attr("y", 60)
+      .attr("x", 165)
+      .attr("y", 270)
       .text("Year 2")
       .style("font-size", "15px")
       .attr("alignment-baseline", "middle");
@@ -199,7 +279,7 @@ const BarChartThree = () => {
 
   return (
     <React.Fragment>
-      <div className="flex justify-center items-center w-full h-80">
+      <div className="block mx-auto sm:w-8/12 xl:flex xl:justify-center xl:items-center w-full">
         <VisibilitySensor
           onChange={(isVisible) => {
             setVisibility(isVisible);
@@ -208,10 +288,18 @@ const BarChartThree = () => {
         >
           <svg
             style={{ width: 500 }}
-            className="my-20 block overflow-visible bg-white w-auto h-80"
+            className="xl:my-20 block overflow-visible bg-white w-auto h-80 m-auto"
             ref={svgRef}
           ></svg>
         </VisibilitySensor>
+        <div className="max-w-md text-left m-auto">
+          <figcaption className="my-10">
+            Fig.3 - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Soluta minus ad maxime cum, blanditiis minima? Minima placeat
+            quisquam cum, quae reiciendis dolore voluptate eius aliquid. Illo
+            sunt asperiores officiis quia?
+          </figcaption>
+        </div>
       </div>
     </React.Fragment>
   );

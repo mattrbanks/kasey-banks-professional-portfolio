@@ -106,6 +106,9 @@ const IndexPage = () => {
             <BarChartTwo />
             <BarChartThree />
           </div>
+          <div className="flex justify-center">
+            <img src="https://github.com/mattrbanks/temp-images-repo/blob/main/offthechartsbitmoji.png?raw=true" />
+          </div>
         </div>
       </main>
     </Layout>
