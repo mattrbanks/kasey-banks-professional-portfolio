@@ -5,7 +5,8 @@ import "../components/styles.css";
 import BarChartOne from "../components/barChartOne";
 import BarChartTwo from "../components/barChartTwo";
 import BarChartThree from "../components/barChartThree";
-import kaseyheaderfigmaps from "../images/kaseyheaderfigmaps.svg";
+import kaseyheaderfigmaps from "../images/kaseyheaderfigmaps.png";
+import ImageReusable from "../components/imageReusable";
 
 //import SEO from "../components/seo";
 
@@ -46,7 +47,11 @@ const IndexPage = () => {
           </div>
         ) : (
           <div className="main-header-img relative">
-            <img src={kaseyheaderfigmaps} className="main-header-img" />
+            {/* <img src={kaseyheaderfigmaps} className="main-header-img" /> */}
+            <ImageReusable
+              alt=""
+              filename="kaseyheaderfigmapsconvertedsvgtopng.png"
+            />
             <div className="w-full flex justify-center items-center">
               <img
                 onClick={() => {
