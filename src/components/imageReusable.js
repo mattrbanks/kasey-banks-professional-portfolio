@@ -12,7 +12,7 @@ const ImageReusable = (props) => (
               relativePath
               name
               childImageSharp {
-                fluid(maxWidth: 800) {
+                fluid(maxWidth: 1920) {
                   ...GatsbyImageSharpFluid
                 }
               }

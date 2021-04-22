@@ -5,6 +5,7 @@ import "../components/styles.css";
 import BarChartOne from "../components/barChartOne";
 import BarChartTwo from "../components/barChartTwo";
 import BarChartThree from "../components/barChartThree";
+import kaseyheaderfigmaps from "../images/kaseyheaderfigmaps.svg";
 
 //import SEO from "../components/seo";
 
@@ -45,17 +46,14 @@ const IndexPage = () => {
           </div>
         ) : (
           <div className="main-header-img relative">
-            <img
-              src="https://raw.githubusercontent.com/mattrbanks/temp-images-repo/5848e09072dbae54a9583ecbecb9d4f721fbbfb2/kaseyheaderfigmaps.svg"
-              className="main-header-img"
-            />
-            <div className="w-full flex justify-center">
+            <img src={kaseyheaderfigmaps} className="main-header-img" />
+            <div className="w-full flex justify-center items-center">
               <img
                 onClick={() => {
                   setVideoPlay(true);
                 }}
                 style={{ top: "45%" }}
-                className="w-32 mx-3 my-2 cursor-pointer absolute"
+                className="w-12 sm:w-16 md:w-20 lg:w-32 mx-3 my-2 cursor-pointer absolute"
                 alt="mb logo"
                 src={playbutton}
               />
@@ -69,11 +67,13 @@ const IndexPage = () => {
 
         <div className="text-left">
           <div className="block lg:flex lg:justify-center lg:items-center mx-10">
-            <img
-              className="max-w-xsm lg:max-w-md"
-              src="https://github.com/mattrbanks/temp-images-repo/blob/main/whoamibitmoji.png?raw=true"
-            />
-            <p className="lg:pr-80 text-xl">
+            <div className="flex justify-center w-full">
+              <img
+                className="max-w-xsm lg:max-w-md"
+                src="https://github.com/mattrbanks/temp-images-repo/blob/main/whoamibitmoji.png?raw=true"
+              />
+            </div>
+            <p className="lg:pr-20 xl:pr-80 text-xl">
               Welcome to my professional portfolio. Let me tell you a bit about
               myself...
               <br />

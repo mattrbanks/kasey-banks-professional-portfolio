@@ -47,7 +47,7 @@ const BarChartThree = () => {
   };
 
   useEffect(() => {
-    const svg = select(svgRef.current),
+    const svg = select(svgRef.current).attr("viewBox", `0 0 500 300`),
       width = 500,
       height = 300,
       margin = { top: 30, right: 20, bottom: 30, left: 50 },
@@ -234,7 +234,7 @@ const BarChartThree = () => {
   }, []);
 
   useEffect(() => {
-    const svg = select(svgRef.current),
+    const svg = select(svgRef.current).attr("viewBox", `0 0 500 300`),
       width = 500,
       height = 300,
       margin = { top: 30, right: 20, bottom: 30, left: 50 },
@@ -281,10 +281,11 @@ const BarChartThree = () => {
     <React.Fragment>
       <div className="text-center underline font-bold">
         <h3>
-          Mathematics Instructional Coach Data: Instructional Walkthrough Data
+          Mathematics Instructional Coach Data: Instructional Walkthroughs Year
+          1 vs Year 2
         </h3>
       </div>
-      <div className="block mx-auto sm:w-8/12 xl:flex xl:justify-center xl:items-center w-full">
+      <div className="block mx-auto sm:w-8/12 xl:flex xl:justify-center xl:items-center">
         <VisibilitySensor
           onChange={(isVisible) => {
             setVisibility(isVisible);
@@ -292,8 +293,8 @@ const BarChartThree = () => {
           }}
         >
           <svg
-            style={{ width: 500 }}
-            className="xl:my-10 block overflow-visible bg-white w-auto h-80 m-auto"
+            style={{ maxWidth: 500 }}
+            className="ml-6 my-10 block overflow-visible bg-white xl:mx-auto"
             ref={svgRef}
           ></svg>
         </VisibilitySensor>
@@ -305,7 +306,7 @@ const BarChartThree = () => {
             school. The instructional goals were focus, coherence,
             representations and productive struggle in mathematics. This data
             set shows year one data versus year two, after I had a year to work
-            with teacher to provide professional learning and coaching.
+            with teachers to provide professional learning and coaching.
           </figcaption>
         </div>
       </div>

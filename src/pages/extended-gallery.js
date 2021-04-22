@@ -8,19 +8,19 @@ const ExtendedGallery = () => {
       <div>
         <div className="lg:flex lg:justify-center mt-10">
           <div className="flex justify-center items-center">
-            <p className="text-9xl cursive-font mr-10">My Videos</p>
+            <p className="text-6xl lg:text-9xl cursive-font mr-10">My Videos</p>
           </div>
 
           <div>
             <img
-              className="ml-10"
+              className="lg:ml-10"
               src="https://github.com/mattrbanks/temp-images-repo/blob/main/watchMoviesBitmoji.png?raw=true"
             ></img>
           </div>
         </div>
 
         <div className="flex justify-center">
-          <p className="text-xl w-1/2 font-bold">
+          <p className="text-xl lg:w-1/2 font-bold">
             Welcome to my video page. The videos below highlight the span of my
             various roles over the course of my career, including my experience
             teaching students remotely; my experience facilitating data team
@@ -33,7 +33,7 @@ const ExtendedGallery = () => {
         <div className="block mx-auto md:w-8/12 lg:flex lg:justify-evenly lg:w-full">
           <div
             style={{
-              width: "640px",
+              maxWidth: "640px",
               margin: "6rem 0 6rem 0",
             }}
           >
@@ -42,17 +42,20 @@ const ExtendedGallery = () => {
                 Virtually Modeling Math For 4th Graders
               </p>
             </div>
-            <iframe
-              src="https://www.youtube.com/embed/AxTeYRTzY8s"
-              width="640"
-              height="480"
-              title={"K-2 Module Lessons Overview"}
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              frameBorder="0"
-              webkitallowfullscreen="true"
-              mozallowfullscreen="true"
-              allowFullScreen
-            ></iframe>
+            <div className="relative h-0" style={{ paddingBottom: "75%" }}>
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/AxTeYRTzY8s"
+                width="640"
+                height="480"
+                title={"K-2 Module Lessons Overview"}
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                frameBorder="0"
+                webkitallowfullscreen="true"
+                mozallowfullscreen="true"
+                allowFullScreen
+              ></iframe>
+            </div>
             <p className="text-xl">
               I am using whiteboard.chat to virtually instruct a group of 4th
               grade students on how to divide three-digit numbers by a one-digit
@@ -63,24 +66,28 @@ const ExtendedGallery = () => {
 
           <div
             style={{
-              width: "640px",
+              maxWidth: "640px",
               margin: "6rem 0 6rem 0",
             }}
           >
             <p className="text-2xl">
               Facilitating a Data Team Meeting with 3rd Grade Teachers
             </p>
-            <iframe
-              src="https://www.youtube.com/embed/-nn6d4oKBH8"
-              width="640"
-              height="480"
-              title={"K-2 Module Lessons Overview"}
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              frameBorder="0"
-              webkitallowfullscreen="true"
-              mozallowfullscreen="true"
-              allowFullScreen
-            ></iframe>
+            <div className="relative h-0" style={{ paddingBottom: "75%" }}>
+              >
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/-nn6d4oKBH8"
+                width="640"
+                height="480"
+                title={"K-2 Module Lessons Overview"}
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                frameBorder="0"
+                webkitallowfullscreen="true"
+                mozallowfullscreen="true"
+                allowFullScreen
+              ></iframe>
+            </div>
             <p className="text-xl">
               We are engaging in an assessment preview protocol, in order to
               plan for upcoming instruction and to meet the various needs of the
@@ -92,24 +99,27 @@ const ExtendedGallery = () => {
         <div className="block mx-auto md:w-8/12 lg:flex lg:justify-evenly lg:w-full">
           <div
             style={{
-              width: "640px",
+              maxWidth: "640px",
               margin: "6rem 0 6rem 0",
             }}
           >
             <p className="text-2xl">
               Coaching Cycle Routine: Debrief after Micro-Modeling
             </p>
-            <iframe
-              src="https://www.youtube.com/embed/rL6BbeNNeRI"
-              width="640"
-              height="480"
-              title={"K-2 Module Lessons Overview"}
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              frameBorder="0"
-              webkitallowfullscreen="true"
-              mozallowfullscreen="true"
-              allowFullScreen
-            ></iframe>
+            <div className="relative h-0" style={{ paddingBottom: "75%" }}>
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/rL6BbeNNeRI"
+                width="640"
+                height="480"
+                title={"K-2 Module Lessons Overview"}
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                frameBorder="0"
+                webkitallowfullscreen="true"
+                mozallowfullscreen="true"
+                allowFullScreen
+              ></iframe>
+            </div>
             <p className="text-xl">
               I am debriefing an observation with a third-grade teacher, after
               micro-modeling a math routine. The teacher was struggling to get
@@ -123,24 +133,27 @@ const ExtendedGallery = () => {
           </div>
           <div
             style={{
-              width: "640px",
+              maxWidth: "640px",
               margin: "6rem 0 6rem 0",
             }}
           >
             <p className="text-2xl">
               Modeling a Number Sense Routine with 1st Graders
             </p>
-            <iframe
-              src="https://www.youtube.com/embed/TqmJlVvPDZU"
-              width="640"
-              height="480"
-              title={"K-2 Module Lessons Overview"}
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              frameBorder="0"
-              webkitallowfullscreen="true"
-              mozallowfullscreen="true"
-              allowFullScreen
-            ></iframe>
+            <div className="relative h-0" style={{ paddingBottom: "75%" }}>
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/TqmJlVvPDZU"
+                width="640"
+                height="480"
+                title={"K-2 Module Lessons Overview"}
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                frameBorder="0"
+                webkitallowfullscreen="true"
+                mozallowfullscreen="true"
+                allowFullScreen
+              ></iframe>
+            </div>
             <p className="text-xl">
               This video contains highlights of a number sense routine called,
               Which One Doesn't Belong?, in a first-grade classroom. I begin by
