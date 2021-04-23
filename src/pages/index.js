@@ -67,11 +67,11 @@ const IndexPage = () => {
         )}
 
         <div className="text-center">
-          <p className="text-6xl mt-10">Who am I?</p>
+          <p className="text-6xl mt-10 cursive-font">Who am I?</p>
         </div>
 
         <div className="text-left">
-          <div className="block lg:flex lg:justify-center lg:items-center mx-10">
+          <div className="block lg:flex lg:justify-center lg:items-center mx-4">
             <div className="flex justify-center w-full">
               <img
                 className="max-w-xsm lg:max-w-md"
@@ -104,7 +104,7 @@ const IndexPage = () => {
 
         <div>
           <div className="text-center">
-            <p className="text-6xl mt-10 mb-10">
+            <p className="text-6xl mt-10 mb-10 cursive-font mx-2">
               What can I do for you? Here are some numbers.
             </p>
           </div>

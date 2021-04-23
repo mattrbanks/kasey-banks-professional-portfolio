@@ -292,7 +292,7 @@ const BarChartTwo = () => {
           ></svg>
         </VisibilitySensor>
         <div className="max-w-md text-left m-auto">
-          <figcaption className="my-10">
+          <figcaption className="my-10 mx-2">
             Fig.2 - This graph represents data from my time working with
             students in intervention groups. At the time, I was working with six
             students. The goal was to increase each student’s Fall MAP math

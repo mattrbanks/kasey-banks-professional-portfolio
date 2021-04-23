@@ -299,7 +299,7 @@ const BarChartThree = () => {
           ></svg>
         </VisibilitySensor>
         <div className="max-w-md text-left m-auto">
-          <figcaption className="my-10">
+          <figcaption className="my-10 mx-2">
             Fig.3 - This graph represents data from my time as a district
             instructional coach. During this time, I facilitated instructional
             walkthroughs and collected data around instructional goals for the

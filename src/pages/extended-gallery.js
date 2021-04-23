@@ -11,7 +11,7 @@ const ExtendedGallery = () => {
             <p className="text-6xl lg:text-9xl cursive-font mr-10">My Videos</p>
           </div>
 
-          <div>
+          <div className="flex justify-center lg:block">
             <img
               className="lg:ml-10"
               src="https://github.com/mattrbanks/temp-images-repo/blob/main/watchMoviesBitmoji.png?raw=true"
@@ -20,7 +20,7 @@ const ExtendedGallery = () => {
         </div>
 
         <div className="flex justify-center">
-          <p className="text-xl lg:w-1/2 font-bold">
+          <p className="text-xl lg:w-1/2 font-bold mx-4">
             Welcome to my video page. The videos below highlight the span of my
             various roles over the course of my career, including my experience
             teaching students remotely; my experience facilitating data team
@@ -34,7 +34,7 @@ const ExtendedGallery = () => {
           <div
             style={{
               maxWidth: "640px",
-              margin: "6rem 0 6rem 0",
+              margin: "6rem 0.5rem 6rem 0.5rem",
             }}
           >
             <div className="w-full text-center">
@@ -67,7 +67,7 @@ const ExtendedGallery = () => {
           <div
             style={{
               maxWidth: "640px",
-              margin: "6rem 0 6rem 0",
+              margin: "6rem 0.5rem 6rem 0.5rem",
             }}
           >
             <p className="text-2xl">
@@ -100,7 +100,7 @@ const ExtendedGallery = () => {
           <div
             style={{
               maxWidth: "640px",
-              margin: "6rem 0 6rem 0",
+              margin: "6rem 0.5rem 6rem 0.5rem",
             }}
           >
             <p className="text-2xl">
@@ -134,7 +134,7 @@ const ExtendedGallery = () => {
           <div
             style={{
               maxWidth: "640px",
-              margin: "6rem 0 6rem 0",
+              margin: "6rem 0.5rem 6rem 0.5rem",
             }}
           >
             <p className="text-2xl">
@@ -165,7 +165,7 @@ const ExtendedGallery = () => {
         </div>
 
         <div className="flex justify-center mb-20">
-          <p className="text-xl font-bold">
+          <p className="text-2xl font-bold cursive-font m-2">
             Thank you for taking the time to watch my videos.
           </p>
         </div>

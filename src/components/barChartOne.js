@@ -272,7 +272,7 @@ const BarChartOne = () => {
           ></svg>
         </VisibilitySensor>
         <div className="max-w-md text-left m-auto">
-          <figcaption className="my-10">
+          <figcaption className="my-10 mx-2">
             Fig.1 - This graph represents data from my time as a third-grade
             teacher. It shows my class average, on the state accountability
             test, versus the third-grade average in my school for reading and
