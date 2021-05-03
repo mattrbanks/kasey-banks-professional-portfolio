@@ -3,7 +3,7 @@ module.exports = {
     title: `Professional portfolio Kasey Banks`,
     description: `This is a professional portfolio website for an educator.`,
     author: `Matthew R Banks`,
-    image: ``,
+    image: `https://github.com/mattrbanks/kasey-banks-professional-portfolio/blob/master/src/images/kaseybanksportfoliosite.png?raw=true`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
