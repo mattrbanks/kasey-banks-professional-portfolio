@@ -7,14 +7,14 @@ import BarChartTwo from "../components/barChartTwo";
 import BarChartThree from "../components/barChartThree";
 import kaseyheaderfigmaps from "../images/kaseyheaderfigmaps.png";
 import ImageReusable from "../components/imageReusable";
-
-//import SEO from "../components/seo";
+import SEO from "../components/seo";
 
 const IndexPage = () => {
   const [videoPlay, setVideoPlay] = React.useState(false);
 
   return (
     <Layout>
+      <SEO title="Home" />
       <main className="overflow-hidden">
         <title>BHI Home</title>
         {videoPlay ? (

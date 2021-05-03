@@ -1,10 +1,12 @@
 import React from "react";
 import Layout from "../components/layout";
 import "../components/styles.css";
+import SEO from "../components/seo";
 
 const ExtendedGallery = () => {
   return (
     <Layout>
+      <SEO title="Gallery" />
       <div>
         <div className="lg:flex lg:justify-center mt-10">
           <div className="flex justify-center items-center">
