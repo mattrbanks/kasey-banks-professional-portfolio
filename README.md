@@ -1,30 +1,32 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
+<p align="center"><img alt="kasey header image" src="https://github.com/mattrbanks/kasey-banks-professional-portfolio/blob/master/src/images/kaseybanksportfoliosite.png?raw=true" /></p>
 <h1 align="center">
-  Kasey Banks Professional Educator Portfolio
+  Kasey Banks Educator Portfolio
 </h1>
 
-**About the company**
+**About**
 
-    Temporary Filler...
+    This is a professional portfolio that highlights the work of an educator over the span of her career. She is transitioning from an instructional coach to an administrator and she is highlighting each position she has had over the years. D3 was used to visually represent the data provided. There is a contact form that utilizes reCAPTCHA and is connected to email via Netlify Forms. There is a video gallery that spans the course of her career, including coaching teachers; teaching students remotely; facilitating data team meetings with teachers; and setting routines with elementary students.
 
 **Site features**
 
-    Temporary Filler...
+    - Real Educational Data
+    - Custom Design
+    - Video
+    - Gallery
+    - Contact Form
+    - Resume Page
 
 **Technologies used to build this website**
 
-    *React
-    *JavaScript
-    *Gatsby
-    *MySQL
-    *Jest (Tests)
-    *Tailwind CSS
-    *Express
+    - **React**
+    - **JavaScript**
+    - **Gatsby**
+    - **Netlify Forms**
+    - **reCAPTCHA**
+    - **Tailwind CSS**
+    - **Figma**
+    - **D3**
 
 4.  **Live Website**
 
-    - [site](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+    - [kaseybanksportfolio.com](https://kaseybanksportfolio.com/)
