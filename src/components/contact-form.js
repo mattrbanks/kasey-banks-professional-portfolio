@@ -14,6 +14,7 @@ function encode(data) {
 }
 
 const ContactForm = () => {
+  const [confirm, setConfirm] = React.useState(false);
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [message, setMessage] = React.useState("");
@@ -35,11 +36,15 @@ const ContactForm = () => {
         method: "POST",
         body: encode({ "form-name": "contact", ...contactInfo }),
       })
-        .then(() => alert("Success!"))
+        .then(() => setConfirm(true))
         .catch((error) => alert(error));
 
       event.preventDefault();
-      console.log(contactInfo);
+      setName("");
+      setEmail("");
+      setMessage("");
+      setPhone("");
+      setSubject("");
     } else {
       event.preventDefault();
       alert("Please verify that you are a human!");
@@ -187,6 +192,24 @@ const ContactForm = () => {
               </div>
               <div className="md:w-2/3"></div>
             </div>
+            {confirm ? (
+              <React.Fragment>
+                <div
+                  style={{ transform: "translate(-50%, 0)" }}
+                  className="text-center fixed top-1/3 left-1/2 border border-black p-2 bg-gray-900 rounded-lg text-white"
+                >
+                  <div>Thanks for reaching out!</div>
+                  <button
+                    className="bg-white text-black px-1.5 border border-black rounded-full"
+                    onClick={() => setConfirm(false)}
+                  >
+                    close
+                  </button>
+                </div>
+              </React.Fragment>
+            ) : (
+              ""
+            )}
           </form>
         </div>
       </div>
