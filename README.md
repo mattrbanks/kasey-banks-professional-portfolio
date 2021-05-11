@@ -5,7 +5,9 @@
 
 **About**
 
-    This is a professional portfolio that highlights the work of an educator over the span of her career. She is transitioning from an instructional coach to an administrator and she is highlighting each position she has had over the years. D3 was used to visually represent the data provided. There is a contact form that utilizes reCAPTCHA and is connected to email via Netlify Forms. There is a video gallery that spans the course of her career, including coaching teachers; teaching students remotely; facilitating data team meetings with teachers; and setting routines with elementary students.
+<p>
+This is a professional portfolio that highlights the work of an educator over the span of her career. She is transitioning from an instructional coach to an administrator and she is highlighting each position she has had over the years. D3 was used to visually represent the data provided. There is a contact form that utilizes reCAPTCHA and is connected to email via Netlify Forms. There is a video gallery that spans the course of her career, including coaching teachers; teaching students remotely; facilitating data team meetings with teachers; and setting routines with elementary students.
+</p>
 
 **Site features**
 
